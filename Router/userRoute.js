@@ -60,6 +60,7 @@ router.route('/signIn').post(async (req, res) => {
                expires:new Date(Date.now() + 999999999),
                httpOnly: false,
                sameSite: 'None',
+               secure: true,
 
             })
 
