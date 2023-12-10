@@ -59,7 +59,7 @@ userSchema.pre('save' , async function(next){
 
 userSchema.methods.generateAuthToken = async function(){
     try {
-        const token = jwt.sign({userId : this._id} , 'sundaymondaytuesdaywednesdaythursdayfridaysaturday');
+        const token = jwt.sign({userId : this._id} , process.env.jwtKey);
         this.tokens = this.tokens.concat({token:token})
         await this.save()
         return token
