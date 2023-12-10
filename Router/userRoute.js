@@ -60,7 +60,7 @@ router.route('/signIn').post(async (req, res) => {
                expires:new Date(Date.now() + 999999999),
                httpOnly: true,    
                sameSite: 'None',
-               domain: 'https://ecommerceappmern.onrender.com/', 
+               domain: process.env.RENDER_EXTERNAL_HOSTNAME,
                secure: true, 
 
             })
