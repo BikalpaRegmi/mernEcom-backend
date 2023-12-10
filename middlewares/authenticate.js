@@ -4,7 +4,7 @@ const User = require('../models/userSchema')
 const authenticate = async(req,res,next) =>{
  try {
     const token = req.cookies.ecommerceCookie;
-    const verifyToken = jwt.verify(token,process.env.jwtKey); 
+    const verifyToken = jwt.verify(token,'sundaymondaytuesdaywednesdaythursdayfridaysaturday'); 
 
 
     const rootUser = await User.findOne({_id:verifyToken.userId , "tokens.token":token})
