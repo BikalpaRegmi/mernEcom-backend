@@ -61,6 +61,7 @@ router.route('/signIn').post(async (req, res) => {
                httpOnly: true,    
                sameSite: 'None',
                domain: 'https://ecommerceappmern.onrender.com/', 
+               secure: true, 
 
             })
 
