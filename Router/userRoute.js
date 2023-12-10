@@ -59,8 +59,9 @@ router.route('/signIn').post(async (req, res) => {
             res.cookie('ecommerceCookie' , token , {
                expires:new Date(Date.now() + 999999999),
                httpOnly: true,    
-               sameSite: 'None',
-               domain: 'https://ecommerceappmern.onrender.com/', 
+secure: true ,
+ sameSite: 'None'
+
             })
 
             return res.json({ msg: 'Sign-in successful' });
@@ -128,14 +129,14 @@ router.route('/remove/:id').delete(authenticate, async (req, res) => {
 });
 
 //for signOut of user
-router.route('/logOut').get(authenticate , (req,res)=>{
+router.route('/logOut').get(authenticate , async(req,res)=>{
 try {
    req.rootUser.tokens = req.rootUser.tokens.filter((curval)=>{
       return curval.token !== req.token
    })
    res.clearCookie('ecommerceCookie' , {path:'/'})
 
-   req.rootUser.save();
+  await req.rootUser.save();
 
    res.json(req.rootUser.tokens)
 
