@@ -58,9 +58,8 @@ router.route('/signIn').post(async (req, res) => {
 
             res.cookie('ecommerceCookie' , token , {
                expires:new Date(Date.now() + 999999999),
-               domain: 'https://ecommerceappmern.onrender.com',
-               path: '/',
                httpOnly: true,
+               sameSite: 'None',
 
             })
 
