@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use(cors({
-    origin: ['http://localhost:5173','http://192.168.1.69:5173', process.env.baseUrl ],
+    origin: ['http://localhost:5173','http://192.168.1.69:5173', 'https://serene-muffin-a8ab29.netlify.app' ],
     credentials: true,
   }));
 
