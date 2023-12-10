@@ -1,4 +1,0 @@
-redirects:
-  - source: /api/*
-    destination: https://fri-api-pr-31.onrender.com/*
-    type: 307
