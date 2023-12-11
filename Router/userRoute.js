@@ -58,8 +58,8 @@ router.route('/signIn').post(async (req, res) => {
 
             res.cookie('ecommerceCookie' , token , {
                expires:new Date(Date.now() + 999999999),
-               httpOnly: true,
-               
+               path:'/myapp',
+               domain:'.netlify.app'
             })
 
             return res.json({ msg: 'Sign-in successful' });
