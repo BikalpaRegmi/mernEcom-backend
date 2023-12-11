@@ -4,6 +4,7 @@ const User = require('../models/userSchema')
 const authenticate = async(req,res,next) =>{
  try {
     const token = req.cookies.ecommerceCookie;
+    console.log(token);
     const verifyToken = jwt.verify(token,process.env.jwtKey); 
    
     
