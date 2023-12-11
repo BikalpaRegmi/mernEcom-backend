@@ -5,7 +5,8 @@ const authenticate = async(req,res,next) =>{
  try {
     const token = req.cookies.ecommerceCookie;
     const verifyToken = jwt.verify(token,process.env.jwtKey); 
-
+   
+    
 
     const rootUser = await User.findOne({_id:verifyToken.userId , "tokens.token":token})
 
