@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(cors({
     origin: ['http://localhost:5173','http://192.168.1.69:5173', 'https://ecommerceappmern.netlify.app' ],
     credentials: true,
-    Headers: true,
+    headers: true,
     exposedHeaders: 'Set-Cookie',
     methods: ['GET', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: [
